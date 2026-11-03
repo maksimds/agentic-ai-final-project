@@ -1,0 +1,13 @@
+{
+  "items": {
+    "milk": {"quantity": 0.25, "unit": "gallon", "purchased": "2026-10-28", "restock_at": 0.25, "shelf_life_days": 7},
+    "eggs": {"quantity": 9, "unit": "count", "purchased": "2026-10-30", "restock_at": 4, "shelf_life_days": 21},
+    "chicken breast": {"quantity": 5, "unit": "lb", "purchased": "2026-11-01", "restock_at": 1, "shelf_life_days": 3},
+    "spaghetti sauce": {"quantity": 1, "unit": "jar", "purchased": "2026-10-15", "restock_at": 0},
+    "rice": {"quantity": 2, "unit": "lb", "purchased": "2026-10-01", "restock_at": 1},
+    "butter": {"quantity": 1, "unit": "stick", "purchased": "2026-10-20", "restock_at": 1, "shelf_life_days": 30},
+    "cheddar cheese": {"quantity": 8, "unit": "oz", "purchased": "2026-10-25", "restock_at": 2, "shelf_life_days": 21},
+    "onion": {"quantity": 3, "unit": "count", "purchased": "2026-10-26", "restock_at": 1},
+    "garlic": {"quantity": 1, "unit": "head", "purchased": "2026-10-26", "restock_at": 0}
+  }
+}
