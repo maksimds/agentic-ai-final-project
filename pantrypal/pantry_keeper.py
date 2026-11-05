@@ -88,6 +88,8 @@ Keep answers short. Show lists as bullet points with quantities and units.
 def build_pantry_keeper(model) -> Agent:
     return Agent(
         name="Pantry Keeper",
+        handoff_description="Pantry inventory: what is on hand, purchases, used-up items, "
+                            "restock checks and grocery lists. The only agent that changes the pantry.",
         instructions=INSTRUCTIONS,
         tools=[read_pantry, update_pantry, check_restock, build_grocery_list],
         model=model,
