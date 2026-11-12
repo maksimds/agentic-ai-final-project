@@ -13,14 +13,12 @@ def ask_in_terminal(tool_name: str, arguments: dict) -> bool:
     return input("  Approve this change? (y/n): ").strip().lower() in {"y", "yes"}
 
 
-async def run_turn(agent: Agent, history: list, user_message: str,
-                   approve: Callable[[str, dict], bool] = ask_in_terminal):
-    """Send one user message, handle approvals, return (reply, updated_history).
-
-    `history` is the conversation so far; passing it back in each turn is what
-    gives the agent memory across turns within a session.
-    """
-    result = await Runner.run(agent, history + [{"role": "user", "content": user_message}])
+async def run_with_approvals(agent: Agent, run_input,
+                             approve: Callable[[str, dict], bool] = ask_in_terminal):
+    """Run an agent to completion, asking `approve` about every tool call that
+    needs human approval. Works across handoffs: the run resumes with whichever
+    agent was active when it paused."""
+    result = await Runner.run(agent, run_input)
 
     while result.interruptions:
         state = result.to_state()
@@ -32,4 +30,16 @@ async def run_turn(agent: Agent, history: list, user_message: str,
                 state.reject(item)
         result = await Runner.run(agent, state)
 
+    return result
+
+
+async def run_turn(agent: Agent, history: list, user_message: str,
+                   approve: Callable[[str, dict], bool] = ask_in_terminal):
+    """Send one user message, handle approvals, return (reply, updated_history).
+
+    `history` is the conversation so far; passing it back in each turn is what
+    gives the agent memory across turns within a session.
+    """
+    result = await run_with_approvals(
+        agent, history + [{"role": "user", "content": user_message}], approve)
     return result.final_output, result.to_input_list()

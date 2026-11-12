@@ -1,0 +1,268 @@
+{
+  "source": "notes/notes.pdf (PantryPal Recipe Notes)",
+  "staples": [
+    "water",
+    "salt",
+    "black pepper"
+  ],
+  "recipes": [
+    {
+      "name": "Cheesy Scrambled Eggs",
+      "servings": 2,
+      "minutes": 10,
+      "contains": [
+        "egg",
+        "dairy"
+      ],
+      "ingredients": [
+        {
+          "item": "eggs",
+          "quantity": 4,
+          "unit": "count"
+        },
+        {
+          "item": "cheddar cheese",
+          "quantity": 2,
+          "unit": "oz"
+        },
+        {
+          "item": "butter",
+          "quantity": 0.25,
+          "unit": "stick"
+        },
+        {
+          "item": "milk",
+          "quantity": 0.02,
+          "unit": "gallon"
+        }
+      ],
+      "steps": [
+        "Whisk the eggs and milk with a pinch of salt and pepper.",
+        "Melt the butter in a pan over medium-low heat.",
+        "Pour in the eggs and stir gently until nearly set, about 3 minutes.",
+        "Stir in the cheddar, take off the heat, and serve."
+      ]
+    },
+    {
+      "name": "Garlic Butter Chicken and Rice",
+      "servings": 2,
+      "minutes": 35,
+      "contains": [
+        "meat",
+        "dairy"
+      ],
+      "ingredients": [
+        {
+          "item": "chicken breast",
+          "quantity": 1,
+          "unit": "lb"
+        },
+        {
+          "item": "rice",
+          "quantity": 0.4,
+          "unit": "lb"
+        },
+        {
+          "item": "butter",
+          "quantity": 0.25,
+          "unit": "stick"
+        },
+        {
+          "item": "garlic",
+          "quantity": 0.2,
+          "unit": "head"
+        },
+        {
+          "item": "onion",
+          "quantity": 0.5,
+          "unit": "count"
+        }
+      ],
+      "steps": [
+        "Cook the rice in 2 cups of water with a pinch of salt until tender, about 18 minutes.",
+        "Season the chicken with salt and pepper and cut it into bite-size pieces.",
+        "Melt the butter in a pan, cook the onion for 3 minutes, then add the garlic for 30 seconds.",
+        "Add the chicken and cook until golden and cooked through, about 8 minutes.",
+        "Serve the chicken over the rice."
+      ]
+    },
+    {
+      "name": "Cheesy Baked Chicken with Tomato Sauce",
+      "servings": 2,
+      "minutes": 40,
+      "contains": [
+        "meat",
+        "dairy"
+      ],
+      "ingredients": [
+        {
+          "item": "chicken breast",
+          "quantity": 1,
+          "unit": "lb"
+        },
+        {
+          "item": "spaghetti sauce",
+          "quantity": 0.5,
+          "unit": "jar"
+        },
+        {
+          "item": "cheddar cheese",
+          "quantity": 3,
+          "unit": "oz"
+        },
+        {
+          "item": "garlic",
+          "quantity": 0.1,
+          "unit": "head"
+        }
+      ],
+      "steps": [
+        "Heat the oven to 400 F (200 C).",
+        "Place the chicken in a baking dish, season with salt and pepper, and sprinkle with the garlic.",
+        "Pour the sauce over the chicken and bake for 25 minutes.",
+        "Top with the cheddar and bake 8 more minutes, until the chicken reaches 165 F (74 C)."
+      ]
+    },
+    {
+      "name": "Creamy Cheddar Rice",
+      "servings": 2,
+      "minutes": 30,
+      "contains": [
+        "dairy"
+      ],
+      "ingredients": [
+        {
+          "item": "rice",
+          "quantity": 0.4,
+          "unit": "lb"
+        },
+        {
+          "item": "milk",
+          "quantity": 0.125,
+          "unit": "gallon"
+        },
+        {
+          "item": "cheddar cheese",
+          "quantity": 3,
+          "unit": "oz"
+        },
+        {
+          "item": "butter",
+          "quantity": 0.25,
+          "unit": "stick"
+        },
+        {
+          "item": "onion",
+          "quantity": 0.5,
+          "unit": "count"
+        }
+      ],
+      "steps": [
+        "Melt the butter in a pot and cook the onion for 3 minutes.",
+        "Add the rice and stir for 1 minute, then add the milk and a pinch of salt.",
+        "Simmer on low, covered, stirring often, until the rice is tender, about 18 minutes.",
+        "Stir in the cheddar until melted and serve."
+      ]
+    },
+    {
+      "name": "Chicken Spaghetti",
+      "servings": 2,
+      "minutes": 30,
+      "contains": [
+        "meat",
+        "wheat"
+      ],
+      "ingredients": [
+        {
+          "item": "chicken breast",
+          "quantity": 0.5,
+          "unit": "lb"
+        },
+        {
+          "item": "spaghetti noodles",
+          "quantity": 0.5,
+          "unit": "lb"
+        },
+        {
+          "item": "spaghetti sauce",
+          "quantity": 0.5,
+          "unit": "jar"
+        },
+        {
+          "item": "garlic",
+          "quantity": 0.1,
+          "unit": "head"
+        },
+        {
+          "item": "onion",
+          "quantity": 0.5,
+          "unit": "count"
+        }
+      ],
+      "steps": [
+        "Boil the noodles in salted water until al dente, about 10 minutes, then drain.",
+        "Cook the onion and garlic in a pan for 3 minutes, then add the diced chicken until cooked through.",
+        "Add the sauce and simmer for 5 minutes.",
+        "Toss with the noodles and serve."
+      ]
+    },
+    {
+      "name": "Chicken Noodle Soup",
+      "servings": 2,
+      "minutes": 45,
+      "contains": [
+        "meat",
+        "wheat",
+        "egg"
+      ],
+      "ingredients": [
+        {
+          "item": "chicken breast",
+          "quantity": 0.5,
+          "unit": "lb"
+        },
+        {
+          "item": "egg noodles",
+          "quantity": 0.25,
+          "unit": "lb"
+        },
+        {
+          "item": "carrots",
+          "quantity": 2,
+          "unit": "count"
+        },
+        {
+          "item": "celery",
+          "quantity": 2,
+          "unit": "count"
+        },
+        {
+          "item": "chicken broth",
+          "quantity": 1,
+          "unit": "carton"
+        },
+        {
+          "item": "onion",
+          "quantity": 0.5,
+          "unit": "count"
+        },
+        {
+          "item": "garlic",
+          "quantity": 0.1,
+          "unit": "head"
+        },
+        {
+          "item": "butter",
+          "quantity": 0.25,
+          "unit": "stick"
+        }
+      ],
+      "steps": [
+        "Melt the butter in a pot and cook the onion, carrots and celery for 5 minutes.",
+        "Add the garlic, broth, 2 cups of water and the whole chicken breast; simmer 20 minutes.",
+        "Remove the chicken, shred it, and return it to the pot.",
+        "Add the noodles and cook 8 minutes. Season with salt and pepper."
+      ]
+    }
+  ]
+}

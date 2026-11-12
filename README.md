@@ -9,9 +9,9 @@ only use what you have.
 | Agent | Role | Status |
 |---|---|---|
 | Pantry Keeper | Inventory manager; the only agent that can change pantry data | **Working** |
-| Kitchen Coordinator | Routes user requests to the right agent | Not started |
-| Recipe Planner | Suggests recipes from pantry contents, scaled to servings | Not started |
-| Pantry Verifier | Checks each recipe against the pantry (evaluator-optimizer loop) | Not started |
+| Kitchen Coordinator | Routes user requests to the right agent (SDK handoffs) | **Working (first version)** |
+| Recipe Planner | Suggests recipes from pantry contents, scaled to servings | Starter version (no `get_preferences` yet) |
+| Pantry Verifier | Checks each recipe against the pantry (evaluator-optimizer loop) | Starter version |
 
 ## Setup
 
@@ -26,7 +26,27 @@ cp .env.example .env             # then fill in your Azure / APIM values
 
 `.env` is in `.gitignore`. Never commit keys. No native OpenAI key is used anywhere.
 
-## Run the Pantry Keeper
+## Run the full system (orchestrator)
+
+```bash
+python run_pantrypal.py --reset --trace              # interactive, shows routing + verifier drafts
+python run_pantrypal.py "What can I make for dinner?"
+```
+
+How a turn flows (`pantrypal/orchestrator.py`):
+
+1. **Routing.** The Kitchen Coordinator hands off to the Pantry Keeper or the Recipe Planner,
+   or answers itself (clarifying question, out of scope). Every turn starts at the Coordinator.
+2. **Human in the loop.** All runs go through `run_with_approvals`, so `update_pantry`
+   still pauses for `y/n` after a handoff.
+3. **Evaluator-optimizer.** When the Recipe Planner answers, code (not a prompt) sends its
+   structured `RecipePlan` to the Pantry Verifier. A fail sends the issues back to the planner,
+   at most `MAX_REVISIONS = 2` times. Only the final answer is kept in the chat history.
+
+Recipes come from `data/recipes.json`, transcribed from `notes/notes.pdf`. The "is it in the
+pantry?" check (`recipe_book.check_against_pantry`) is plain code the verifier calls as a tool.
+
+## Run the Pantry Keeper on its own
 
 ```bash
 python run_pantry_keeper.py --reset                  # start from the demo pantry
@@ -63,8 +83,15 @@ pantrypal/
   config.py          Azure OpenAI / APIM client (reads .env)
   pantry_store.py    pantry data logic (JSON file, persists between sessions)
   pantry_keeper.py   Pantry Keeper agent and its 4 tools
-  runner.py          runs a turn and pauses for human approval
+  recipe_book.py     recipe data, scaling, and the pantry check (plain Python)
+  recipe_planner.py  Recipe Planner agent (structured RecipePlan output)
+  pantry_verifier.py Pantry Verifier agent (structured Verdict output)
+  kitchen_coordinator.py  Kitchen Coordinator agent (router, handoffs only)
+  orchestrator.py    PantryPal class: routing -> approvals -> verify/revise loop
+  runner.py          runs an agent and pauses for human approval
 data/pantry_seed.json  demo pantry
-run_pantry_keeper.py   command-line entry point
+data/recipes.json      recipe book (from notes/notes.pdf)
+run_pantrypal.py       full-system command-line entry point
+run_pantry_keeper.py   Pantry Keeper-only entry point
 tests/
 ```
